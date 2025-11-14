@@ -14,41 +14,41 @@
 
     # homebrew is best for GUI apps
     # nixpkgs is best for CLI tools
-    casks = [
-      # OS enhancements
-      "aerospace"
-      "cleanshot"
-      "hiddenbar"
-      "raycast"
-      "betterdisplay"
+    # casks = [
+    #   # OS enhancements
+    #   "aerospace"
+    #   "cleanshot"
+    #   "hiddenbar"
+    #   "raycast"
+    #   "betterdisplay"
 
-      # dev
-      "cursor"
-      "ghostty"
-      "visual-studio-code"
-      "zed"
+    #   # dev
+    #   "cursor"
+    #   "ghostty"
+    #   "visual-studio-code"
+    #   "zed"
 
-      # messaging
-      "discord"
-      "slack"
-      "signal"
+    #   # messaging
+    #   "discord"
+    #   "slack"
+    #   "signal"
 
-      # other
-      "1password"
-      "anki"
-      "brave-browser"
-      "obsidian"
-      "protonvpn"
-      "spotify"
-      "thebrowsercompany-dia"
-      "zen"
-    ];
-    brews = [
-      "docker"
-      "colima"
-    ];
-    taps = [
-      "nikitabobko/tap"
-    ];
+    #   # other
+    #   "1password"
+    #   "anki"
+    #   "brave-browser"
+    #   "obsidian"
+    #   "protonvpn"
+    #   "spotify"
+    #   "thebrowsercompany-dia"
+    #   "zen"
+    # ];
+    # brews = [
+    #   "docker"
+    #   "colima"
+    # ];
+    # taps = [
+    #   "nikitabobko/tap"
+    # ];
   };
 }

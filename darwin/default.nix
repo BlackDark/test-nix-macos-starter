@@ -9,7 +9,7 @@
   imports = [
     ./homebrew.nix
     ./settings.nix
-    # inputs.home-manager.darwinModules.home-manager  # Commented out - focusing on macOS settings first
+    inputs.home-manager.darwinModules.home-manager
     inputs.nix-homebrew.darwinModules.nix-homebrew
   ];
 
@@ -35,19 +35,19 @@
     autoMigrate = true;
   };
 
-  # home-manager config - Commented out - focusing on macOS settings first
-  # home-manager = {
-  #   useGlobalPkgs = true;
-  #   useUserPackages = true;
-  #   users.${primaryUser} = {
-  #     imports = [
-  #       ../home
-  #     ];
-  #   };
-  #   extraSpecialArgs = {
-  #     inherit inputs self primaryUser;
-  #   };
-  # };
+  # home-manager config
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.${primaryUser} = {
+      imports = [
+        ../home
+      ];
+    };
+    extraSpecialArgs = {
+      inherit inputs self primaryUser;
+    };
+  };
 
   # macOS-specific settings
   system.primaryUser = primaryUser;

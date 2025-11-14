@@ -3,6 +3,17 @@
   # touch ID for sudo
   security.pam.services.sudo_local.touchIdAuth = true;
 
+  security.sudo.extraConfig = ''
+    %admin ALL=(ALL:ALL) NOPASSWD: /run/current-system/sw/bin/darwin-rebuild, \
+                                  /run/current-system/sw/bin/nix*, \
+                                  /run/current-system/sw/bin/ln, \
+                                  /nix/store/*/activate, \
+                                  /bin/launchctl, \
+                                  /usr/local/bin/brew, \
+                                  /opt/homebrew/bin/brew
+  '';
+
+
   # system defaults and preferences
   system = {
     stateVersion = 6;

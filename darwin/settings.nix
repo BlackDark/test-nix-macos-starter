@@ -24,6 +24,11 @@
         ShowStatusBar = true; # file count & disk space
       };
 
+      dock = {
+        orientation = "left"; # dock on the left side
+        autohide = true; # automatically hide the dock
+      };
+
       NSGlobalDomain = {
         NSAutomaticSpellingCorrectionEnabled = false;
         NSAutomaticCapitalizationEnabled = false;

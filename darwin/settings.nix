@@ -64,6 +64,11 @@
         NSAutomaticWindowAnimationsEnabled = false;
       };
 
+      # Prevent macOS from creating .DS_Store and ._* files on USB devices and network shares
+      "com.apple.desktopservices" = {
+        DSDontWriteNetworkStores = true; # Don't create .DS_Store on network shares
+        DSDontWriteUSBStores = true; # Don't create .DS_Store on USB devices
+      };
 
       # Menu bar configuration
       # Control which items appear in the menu bar

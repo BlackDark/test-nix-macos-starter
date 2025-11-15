@@ -64,12 +64,6 @@
         NSAutomaticWindowAnimationsEnabled = false;
       };
 
-      # Prevent macOS from creating .DS_Store and ._* files on USB devices and network shares
-      "com.apple.desktopservices" = {
-        DSDontWriteNetworkStores = true; # Don't create .DS_Store on network shares
-        DSDontWriteUSBStores = true; # Don't create .DS_Store on USB devices
-      };
-
       # Menu bar configuration
       # Control which items appear in the menu bar
       # "com.apple.controlcenter" = {
@@ -112,5 +106,15 @@
       #   FlashDateSeparators = false; # Flash the separators
       # };
     };
+
+    # Prevent macOS from creating .DS_Store and ._* files on USB devices and network shares
+    # Using activation script since com.apple.desktopservices is not directly supported in defaults
+    activationScripts.preventDSStore = ''
+      # Prevent .DS_Store files on network shares
+      defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+      
+      # Prevent .DS_Store files on USB devices
+      defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+    '';
   };
 }

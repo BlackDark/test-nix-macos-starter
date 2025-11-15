@@ -33,6 +33,7 @@
       dock = {
         orientation = "left"; # dock on the left side
         autohide = true; # automatically hide the dock
+        show-recents = false; # disable recent apps in Dock
         
         # Configure which apps appear in the Dock
         # Add paths to applications you want pinned to the Dock

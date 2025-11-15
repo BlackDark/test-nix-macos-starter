@@ -9,8 +9,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # system-level software and settings (macOS)
-    nix-darwin.url = "github:nix-darwin/nix-darwin/master";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    darwin.url = "github:nix-darwin/nix-darwin/master";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     # declarative homebrew management
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";

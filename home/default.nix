@@ -17,12 +17,15 @@
     # create .hushlogin file to suppress login messages
     file.".hushlogin".text = "";
 
+
+    # TODO: absolute paths cause impure execution
+    
     # Create symlink from dotfiles directory to home directory
     # When source points to a path outside the Nix store, home-manager creates a symlink
     # Files
     file.".gitconfig".source = "/Users/${primaryUser}/projects/dev_config/dotfiles/.gitconfig";
     file.".terraformrc".source = "/Users/${primaryUser}/projects/dev_config/dotfiles/.terraformrc";
-    file.".zshrc".source = "/Users/${primaryUser}/projects/dev_config/dotfiles/.zshrc-zinit";
+    file.".zshrc".source = "/Users/${primaryUser}/projects/dev_config/dotfiles/.zshrc-zinit.zshrc";
     # Directories (symlink works the same way for folders)
 
     file.".config/ohmyposh".source = "/Users/${primaryUser}/projects/dev_config/dotfiles/.config/ohmyposh";

@@ -3,15 +3,10 @@
   # touch ID for sudo
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  security.sudo.extraConfig = ''
-    %admin ALL=(ALL:ALL) NOPASSWD: /run/current-system/sw/bin/darwin-rebuild, \
-                                  /run/current-system/sw/bin/nix*, \
-                                  /run/current-system/sw/bin/ln, \
-                                  /nix/store/*/activate, \
-                                  /bin/launchctl, \
-                                  /usr/local/bin/brew, \
-                                  /opt/homebrew/bin/brew
-  '';
+  # only initally set this to get faster installs without having to always give access
+  # security.sudo.extraConfig = ''
+  #   marbaced ALL=(ALL:ALL) NOPASSWD: ALL
+  # '';
 
 
   # system defaults and preferences
@@ -46,7 +41,7 @@
           "/Applications/iTerm.app"
           "/Applications/Microsoft Outlook.app"
           "/Applications/Spotify.app"
-          "/Applications/Zen Browser.app"
+          "/Applications/Zen.app"
           "/System/Applications/App Store.app"
           "/System/Applications/Apps.app"
           "/System/Applications/Calendar.app"

@@ -34,7 +34,7 @@
     # VSCode prompts - symlink from repo to VSCode config directory
     #file."Library/Application Support/Code/User/prompts".source = config.lib.file.mkOutOfStoreSymlink "../files/vscode/prompts";
 
-    #file."Library/Application Support/Code/User/prompts".source = ./files/vscode/prompts;
+    file."Library/Application Support/Code/User/prompts".source = ../files/vscode/prompts;
   };
   
   # Copy files from dotfiles directory only if they don't exist

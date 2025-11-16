@@ -128,7 +128,7 @@
       "wakeonlan"
       "watch"
       "wget"
-      "wireguard-tools"
+      # "wireguard-tools"
       "zoxide"
       "zsh"
       #"aws/tap/ec2-instance-selector"

@@ -1,4 +1,4 @@
-{ pkgs, lib, primaryUser, ... }:
+{ config, pkgs, lib, primaryUser, self, ... }:
 {
   imports = [
     #./packages.nix
@@ -23,13 +23,18 @@
     # Create symlink from dotfiles directory to home directory
     # When source points to a path outside the Nix store, home-manager creates a symlink
     # Files
-    file.".gitconfig".source = "/Users/${primaryUser}/projects/dev_config/dotfiles/.gitconfig";
-    file.".terraformrc".source = "/Users/${primaryUser}/projects/dev_config/dotfiles/.terraformrc";
-    file.".zshrc".source = "/Users/${primaryUser}/projects/dev_config/dotfiles/.zshrc-zinit.zshrc";
+    file.".gitconfig".source = config.lib.file.mkOutOfStoreSymlink "/Users/${primaryUser}/projects/dev_config/dotfiles/.gitconfig";
+    file.".terraformrc".source = config.lib.file.mkOutOfStoreSymlink "/Users/${primaryUser}/projects/dev_config/dotfiles/.terraformrc";
+    file.".zshrc".source = config.lib.file.mkOutOfStoreSymlink "/Users/${primaryUser}/projects/dev_config/dotfiles/.zshrc-zinit.zshrc";
     # Directories (symlink works the same way for folders)
 
-    file.".config/ohmyposh".source = "/Users/${primaryUser}/projects/dev_config/dotfiles/.config/ohmyposh";
-    file.".zprezto-custom".source = "/Users/${primaryUser}/projects/dev_config/.zprezto-custom";
+    file.".config/ohmyposh".source = config.lib.file.mkOutOfStoreSymlink "/Users/${primaryUser}/projects/dev_config/dotfiles/.config/ohmyposh";
+    file.".zprezto-custom".source = config.lib.file.mkOutOfStoreSymlink "/Users/${primaryUser}/projects/dev_config/.zprezto-custom";
+
+    # VSCode prompts - symlink from repo to VSCode config directory
+    #file."Library/Application Support/Code/User/prompts".source = config.lib.file.mkOutOfStoreSymlink "../files/vscode/prompts";
+
+    #file."Library/Application Support/Code/User/prompts".source = ./files/vscode/prompts;
   };
   
   # Copy files from dotfiles directory only if they don't exist

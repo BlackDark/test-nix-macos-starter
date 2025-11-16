@@ -57,7 +57,7 @@
       "orcaslicer"
       #"postman"
       #"rar"
-      "raspberry-pi-imager"
+      # "raspberry-pi-imager"
       "raycast"
       "rectangle"
       "rustdesk"
@@ -147,5 +147,10 @@
       #"stripe/stripe-cli"
       #"supabase/tap"
     ];
+
+    # masApps = {
+    #   "Bitwarden" = 1352778147;
+    #   "WireGuard" = 1451685025;
+    # };
   };
 }

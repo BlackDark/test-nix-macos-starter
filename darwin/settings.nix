@@ -17,6 +17,9 @@
     startup.chime = false;
 
     defaults = {
+
+      screensaver.askForPasswordDelay = 10;
+
       loginwindow = {
         GuestEnabled = false;
         DisableConsoleAccess = true;
@@ -25,7 +28,7 @@
       finder = {
         AppleShowAllFiles = true; # hidden files
         AppleShowAllExtensions = true; # file extensions
-        _FXShowPosixPathInTitle = true; # title bar full path
+        _FXShowPosixPathInTitle = false; # title bar full path
         ShowPathbar = true; # breadcrumb nav at bottom
         ShowStatusBar = true; # file count & disk space
       };
